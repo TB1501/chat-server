@@ -5,10 +5,10 @@ import hr.vsite.java.chatserver.domain.Group;
 
 import java.util.List;
 
-public interface GroupRepository extends JpaRepository<Group, String> {
+public interface GroupRepository
+        extends JpaRepository<Group, String>,
+        GroupCustomRepository {
 
-    public List<Group> findAllByGroupNameContaining(String groupName);
+    List<Group> findAllByGroupNameContaining(String groupName);
 
-
-    List<Group> findByGroupNameContaining(String groupName);
 }
